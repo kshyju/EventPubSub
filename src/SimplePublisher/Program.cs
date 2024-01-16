@@ -10,8 +10,8 @@
 
             for(var i = 0; i < numberOfSecondsToRun; i++)
             {
-                MinimalEventPublisher.Log.Foo($"Foo {i}");
-                MinimalEventPublisher.Log.Bar($"Bar {i}");
+                MinimalEventPublisher.Log.Foo($"Foo {i} at {DateTime.Now}");
+                MinimalEventPublisher.Log.Bar($"Bar {i} at {DateTime.Now}");
                 Console.WriteLine($"Sent Foo and Bar event {i}");
                 await Task.Delay(1000);
             }

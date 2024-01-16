@@ -9,4 +9,7 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Diagnostics.Tracing.TraceEvent" Version="3.1.7" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\SimplePubSub.Shared\SimplePubSub.Shared.csproj" />
+	</ItemGroup>
 </Project>

@@ -1,11 +1,13 @@
-﻿using System.Diagnostics.Tracing;
+﻿using SimplePubSub.Shared;
+using System.Diagnostics.Tracing;
 
 namespace SimplePublisher
 {
-    [EventSource(Name = "Shyjus-SimpleEventPublisher")]
+
+    [EventSource(Name = Constants.EventSourceName)]
     public sealed class MinimalEventPublisher : EventSource
     {
-        [Event(1, Level = EventLevel.Informational)]
+        [Event(1)]
         public void Foo(string Message) { WriteEvent(1, Message); }
 
         [Event(2)]

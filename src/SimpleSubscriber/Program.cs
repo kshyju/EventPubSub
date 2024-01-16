@@ -1,15 +1,14 @@
 ﻿using Microsoft.Diagnostics.Tracing.Session;
 using Microsoft.Diagnostics.Tracing;
+using SimplePubSub.Shared;
 
 namespace SimpleSubscriber
 {
     internal class Program
     {
-        private const string ProviderName = "Shyjus-SimpleEventPublisher";
-
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting event subscriber");
+            Console.WriteLine($"Starting event subscriber for provider '{Constants.EventSourceName}'");
 
             using (var session = new TraceEventSession("MySimpleSession"))
             {
@@ -20,7 +19,7 @@ namespace SimpleSubscriber
                     session.Dispose();
                 };
 
-                session.EnableProvider(ProviderName);
+                session.EnableProvider(Constants.EventSourceName);
                 var parser = session.Source.Dynamic;
 
                 parser.All += delegate (TraceEvent data)
