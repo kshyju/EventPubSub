@@ -24,15 +24,11 @@ namespace SimpleSubscriber
 
                 parser.All += delegate (TraceEvent data)
                 {
-                    Console.WriteLine($"Event {data.EventName} received from {data.ProviderName} at level {data.Level}");
+                    // Console.WriteLine($"Event {data.EventName} received from {data.ProviderName} at level {data.Level}");
 
                     if (data.EventName == "Foo")
                     {
                         Console.WriteLine($"Foo event received with payload '{data.PayloadByName("Message")}'");
-                    }
-                    else if (data.EventName == "Bar")
-                    {
-                        Console.WriteLine($"Bar event received with payload '{data.PayloadByName("Message")}'");
                     }
                 };
 
