@@ -2,11 +2,13 @@
 {
     internal class Program
     {
+        private const int numberOfSecondsToRun = 30;
+
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Starting Simple event publisher. Will send Foo and Bar event every second for 10 seconds.");
+            Console.WriteLine($"Starting Simple event publisher. Will send Foo and Bar event every second for {numberOfSecondsToRun} seconds.");
 
-            for(var i = 0; i < 10; i++)
+            for(var i = 0; i < numberOfSecondsToRun; i++)
             {
                 MinimalEventPublisher.Log.Foo($"Foo {i}");
                 MinimalEventPublisher.Log.Bar($"Bar {i}");
