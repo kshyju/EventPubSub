@@ -3,7 +3,6 @@ using System.Diagnostics.Tracing;
 
 namespace SimplePublisher
 {
-
     [EventSource(Name = Constants.EventSourceName)]
     public sealed class MinimalEventPublisher : EventSource
     {

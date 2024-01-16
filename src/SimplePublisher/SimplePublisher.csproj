@@ -6,9 +6,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<!--<PublishAot>true</PublishAot>-->
+		<PublishAot>true</PublishAot>
 	</PropertyGroup>
-
+	<PropertyGroup>
+		<EventSourceSupport>true</EventSourceSupport>
+	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\SimplePubSub.Shared\SimplePubSub.Shared.csproj" />
 	</ItemGroup>
