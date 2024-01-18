@@ -13,7 +13,7 @@ namespace SimpleSubscriber
             if (args.Length > 0)
             {
                 var providers = args[0].Split(',', StringSplitOptions.TrimEntries);
-                providerNames.Concat(providers).Distinct().ToArray();
+                providerNames = providerNames.Concat(providers).Distinct().ToArray();
             }
 
             using (var session = new TraceEventSession("MySimpleSession"))
